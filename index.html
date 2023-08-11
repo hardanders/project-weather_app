@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src=""></script>
+</head>
+<body>
+    <div class="full-wrapper">
+        <div class="app-title">Weather App</div>
+        <div class="content-wrapper">
+            <div class="city-wrapper">
+                <form action="" class="search-form" type="submit" onsubmit="return false">
+                    <label for="search-input">Location</label>
+                    <input type="text" id="search-input" placeholder="Search">
+                    <button type="submit" id="form-btn" onclick="display.submitAndSet()">Search</button>
+                </form>
+                <div class="slider-container">
+                    <div class="slider-text">F</div>
+                    <label class="switch">
+                        <input id="temp-toggle" type="checkbox" onclick="display.toggleDisplay()">
+                        <span class="slider round"></span>
+                    </label>
+                    <div class="slider-text">C</div>
+                </div>
+                <div class="location">
+                    <div class="city"></div>
+                    <div class="region"></div>
+                </div>
+                <img class="region-img" src="" alt="">
+            </div>
+            <div class="results-wrapper">
+                <div class="current-wrapper">
+                    <div class="current-display">
+                        <div class="current-condition">
+                            <div class="current-title">CURRENT</div>
+                            <img class="condition-img" alt="" src="">
+                            <div class="current-condition-string"></div>
+                        </div>
+                        <div class="current-temp-display">
+                            <div class="current-temp-num"></div>
+                            <div class="current-temp-stats">
+                                <div class="feels-like-text">Feels Like</div>
+                                <div class="feels-like-num"></div>
+                            </div>
+                            <div class="air-quality-div">
+                                <button class="air-quality-button" onclick="display.listAirQuality()">[Air Quality Index]</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="current-stats">
+                        <div class="current-left">
+                            <div class="current-cloud stat-header">
+                                <div class="current-cloud-text stat-left">Cloud Coverage:</div>
+                                <div class="current-cloud-num stat-right"></div>
+                            </div>
+                            <div class="current-rain stat-header">
+                                <div class="current-rain-text stat-left">Rain:</div>
+                                <div class="current-rain-num stat-right"></div>
+                            </div>
+                            <div class="current-humidity stat-header">
+                                <div class="current-humidity-text stat-left">Humidity:</div>
+                                <div class="current-humidity-num stat-right"></div>
+                            </div>
+                            <div class="current-uv stat-header">
+                                <div class="current-uv-text stat-left">UV:</div>
+                                <div class="current-uv-num stat-right"></div>
+                            </div>
+                        </div>
+                        <div class="current-right">
+                            <div class="current-wind-speed stat-header">
+                                <div class="current-wind-speed-text stat-left">Wind Speed:</div>
+                                <div class="current-wind-speed-num stat-right"></div>
+                            </div>
+                            <div class="current-wind-direction stat-header">
+                                <div class="current-wind-dir-text stat-left">Wind Direction:</div>
+                                <div class="current-wind-dir-num stat-right"></div>
+                            </div>
+                            <div class="current-pressure stat-header">
+                                <div class="current-pressure-text stat-left">Air Pressure:</div>
+                                <div class="current-pressure-num stat-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="forecast-wrapper">
+                    <div class="three-day-header">Three Day Forecast</div>
+                    <div class="three-day">
+                        <div id="forecast-1"></div>
+                        <div id="forecast-2"></div>
+                        <div id="forecast-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="weather-footer">Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a></div>
+</body>
+</html>
